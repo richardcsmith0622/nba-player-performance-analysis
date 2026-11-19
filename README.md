@@ -177,11 +177,20 @@ Calculated by combining steals and blocks per game.
 
 Stocks measures box-score defensive production rather than overall defensive ability.
 
+
 ## Data Visualization
 
-Tableau is used to visualize player statistics and support comparisons across different performance categories.
+Created an interactive Tableau dashboard to
+visualize NBA player statistics from the
+2023-2024 season.
 
-**Tableau Dashboard:** Link to be added.
+The dashboard complements the SQL analysis
+by presenting player performance data visually.
+
+**View the Interactive Dashboard:**
+
+[2023-2024 NBA Player Statistics Dashboard](https://public.tableau.com/views/NBA23-24StatAnalysis/Dashboard1)
+
 
 ## Project Takeaways
 
