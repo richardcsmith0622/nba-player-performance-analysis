@@ -50,18 +50,20 @@ Renamed the field goal percentage column from `FG%` to `fg_pct` using `ALTER TAB
 
 ## SQL Analysis
 
-The project contains eight SQL scripts covering the following areas:
+The project contains eight SQL scripts covering
+data preparation and player performance analysis.
 
 | Analysis | Description |
 |---|---|
-| Duplicate Handling | Selects one record per player using a window function |
-| Top NBA Scorers | Ranks players by points per game |
-| Scoring and Shooting Efficiency | Examines high-scoring players alongside field goal percentage |
-| Most Minutes Played | Estimates total playing time using games played and minutes per game |
-| Assist-to-Turnover Ratio | Evaluates playmaking efficiency |
-| Overall Player Impact | Creates a custom metric combining five statistical categories |
-| Field Goal Column Standardization | Standardizes a column name for easier querying |
-| Defensive Stocks Leaders | Ranks players by combined steals and blocks per game |
+| [Duplicate Handling](data_cleaning_remove_duplicates.sql) | Creates a deduplicated player table using a window function |
+| [Top NBA Scorers](scoring_analysis.sql) | Ranks players by points per game |
+| [Scoring and Shooting Efficiency](scoring_efficiency_analysis.sql) | Examines scoring alongside field goal percentage |
+| [Most Minutes Played](most_minutes_played.sql) | Estimates total playing time |
+| [Assist-to-Turnover Ratio](assist_turnover_ratio.sql) | Evaluates playmaking efficiency |
+| [Overall Player Impact](overall_player_impact.sql) | Calculates a custom statistical impact score |
+| [Field Goal Column Standardization](data_cleaning_fg.sql) | Renames the field goal percentage column |
+| [Defensive Stocks Leaders](stocks_leaders.sql) | Ranks players by combined steals and blocks per game |
+
 
 ## Key Findings
 
