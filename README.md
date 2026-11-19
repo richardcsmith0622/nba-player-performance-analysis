@@ -10,9 +10,6 @@ The project also demonstrates data preparation, SQL querying, and the creation o
 
 ## Dataset
 
--
-## Dataset
-
 - **Dataset:** 2023–2024 NBA Player Stats
 - **Source:** Kaggle
 - **Creator:** vivovinco
