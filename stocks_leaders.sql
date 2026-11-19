@@ -1,30 +1,21 @@
-
--- Project: NBA Player Statistics Analysis (2023-2024)
--- Analysis: Top 10 Defensive Stocks Leaders
---
--- Purpose:
--- Identify players with the highest combined
--- steals and blocks per game.
---
--- Method:
--- Calculate stocks by adding steals (STL)
--- and blocks (BLK).
--- Include only players who played at least
--- 30 games during the season.
--- Rank the top 10 players by stocks per game.
---
--- Note:
--- Stocks measures defensive box-score production,
--- not overall defensive ability.
+-- Defensive Stocks Leaders (2023-2024)
+-- Ranks NBA players by combined steals and
+-- blocks per game (commonly called "stocks").
+-- Uses deduplicated player statistics.
+-- Includes players who appeared in at least 30 games.
 
 SELECT
-    Player,
-    Tm,
-    G,
-    STL,
-    BLK,
-    ROUND(STL + BLK, 2) AS stocks
-FROM `nba-player-data-492519.NBA_Player_Stats.nba_stats_cleaned`
+  Player,
+  Tm,
+  G,
+  STL,
+  BLK,
+  ROUND(
+    CAST(STL AS NUMERIC) +
+    CAST(BLK AS NUMERIC),
+    2
+  ) AS stocks
+FROM `nba-player-data-492519.NBA_Player_Stats.nba_stats_unique`
 WHERE G >= 30
 ORDER BY stocks DESC
 LIMIT 10;
