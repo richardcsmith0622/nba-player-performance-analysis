@@ -33,7 +33,16 @@ Before conducting the analysis, I performed data preparation tasks to improve co
 
 **1. Duplicate Handling**
 
-Used the `ROW_NUMBER()` window function to select one record per player, prioritizing combined-team (`TOT`) records for players who appeared on multiple teams.
+Used ROW_NUMBER() and QUALIFY to create a
+deduplicated table named `nba_stats_unique`.
+
+The process prioritizes combined-season (TOT)
+records for players who changed teams, retaining
+one record per player while preserving the
+original cleaned dataset.
+
+All player-ranking analyses use the
+deduplicated table.
 
 **2. Column Name Standardization**
 
@@ -54,13 +63,12 @@ The project contains eight SQL scripts covering the following areas:
 | Field Goal Column Standardization | Standardizes a column name for easier querying |
 | Defensive Stocks Leaders | Ranks players by combined steals and blocks per game |
 
-
 ## Key Findings
 
 ### 1. Scoring Leaders
 
 Analyzed points per game among players who appeared
-in at least 41 games during the 2023–2024 NBA season.
+in at least 41 games during the 2023-2024 NBA season.
 
 **Key Findings:**
 - Joel Embiid led qualifying players with 34.7 PPG.
@@ -81,16 +89,13 @@ appearing in at least 41 games.
 **Key Findings:**
 - Tyus Jones led qualifying players with a 7.30
   assist-to-turnover ratio.
-- Fred VanVleet ranked second with 4.76,
-  followed by Tyrese Haliburton with 4.74.
-- Haliburton averaged 10.9 assists per game,
-  compared with Jones's 7.3.
+- Fred VanVleet ranked second with 4.76.
+- Tyrese Haliburton ranked third with 4.74.
 
 **Insight:** Higher assist totals do not necessarily
 indicate better ball security. Tyus Jones demonstrated
 the strongest assist-to-turnover efficiency among
-qualifying players despite averaging fewer assists
-than several other players.
+qualifying players.
 
 ### 3. Defensive Stocks Leaders
 
@@ -99,18 +104,15 @@ among players who appeared in at least 30 games.
 
 **Key Findings:**
 - Victor Wembanyama led with 4.8 stocks per game.
-- Anthony Davis ranked second with 3.5 stocks
-  per game.
-- Wembanyama recorded approximately 37% more
-  stocks per game than Davis.
-- The results identified duplicate player entries
-  caused by midseason team changes.
+- Anthony Davis ranked second with 3.5 stocks.
+- Daniel Gafford ranked third with 3.0 stocks
+  using his combined-season statistics.
 
 **Insight:** Wembanyama demonstrated exceptional
 defensive box-score production, particularly through
-shot blocking. The analysis also highlighted the
-importance of handling multiple records for players
-who changed teams during the season.
+shot blocking. Deduplicating the dataset also
+prevented traded players from appearing multiple
+times in the rankings.
 
 ### 4. Overall Player Impact
 
@@ -126,9 +128,6 @@ Players were required to appear in at least
   score of 54.8.
 - Giannis Antetokounmpo ranked second at 50.7.
 - Nikola Jokic ranked third at 50.1.
-- Jokic ranked higher than Shai
-  Gilgeous-Alexander despite averaging
-  fewer points per game.
 
 **Insight:** Combining multiple statistical
 categories provides a broader view of box-score
@@ -136,8 +135,9 @@ production than scoring alone. The results
 highlighted players who contributed across
 several areas of the game.
 
-**Note:** This is a custom, unweighted metric
-rather than an official NBA player rating.
+**Note:** This is a custom, unweighted metric,
+not an official NBA player efficiency rating.
+
 
 ## Analytical Methods
 
