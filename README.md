@@ -54,6 +54,91 @@ The project contains eight SQL scripts covering the following areas:
 | Field Goal Column Standardization | Standardizes a column name for easier querying |
 | Defensive Stocks Leaders | Ranks players by combined steals and blocks per game |
 
+
+## Key Findings
+
+### 1. Scoring Leaders
+
+Analyzed points per game among players who appeared
+in at least 41 games during the 2023–2024 NBA season.
+
+**Key Findings:**
+- Joel Embiid led qualifying players with 34.7 PPG.
+- Luka Doncic ranked second with 33.9 PPG.
+- Giannis Antetokounmpo ranked third with 30.4 PPG.
+- Four players averaged more than 30 points per game.
+
+**Insight:** Embiid and Doncic stood out as the
+highest-scoring players among those meeting the
+minimum games-played requirement.
+
+### 2. Playmaking Efficiency
+
+Analyzed assist-to-turnover ratios among players
+averaging at least 7.3 assists per game and
+appearing in at least 41 games.
+
+**Key Findings:**
+- Tyus Jones led qualifying players with a 7.30
+  assist-to-turnover ratio.
+- Fred VanVleet ranked second with 4.76,
+  followed by Tyrese Haliburton with 4.74.
+- Haliburton averaged 10.9 assists per game,
+  compared with Jones's 7.3.
+
+**Insight:** Higher assist totals do not necessarily
+indicate better ball security. Tyus Jones demonstrated
+the strongest assist-to-turnover efficiency among
+qualifying players despite averaging fewer assists
+than several other players.
+
+### 3. Defensive Stocks Leaders
+
+Analyzed combined steals and blocks per game
+among players who appeared in at least 30 games.
+
+**Key Findings:**
+- Victor Wembanyama led with 4.8 stocks per game.
+- Anthony Davis ranked second with 3.5 stocks
+  per game.
+- Wembanyama recorded approximately 37% more
+  stocks per game than Davis.
+- The results identified duplicate player entries
+  caused by midseason team changes.
+
+**Insight:** Wembanyama demonstrated exceptional
+defensive box-score production, particularly through
+shot blocking. The analysis also highlighted the
+importance of handling multiple records for players
+who changed teams during the season.
+
+### 4. Overall Player Impact
+
+Created a custom statistical impact score by
+combining points, rebounds, assists, steals,
+and blocks per game.
+
+Players were required to appear in at least
+65 games.
+
+**Key Findings:**
+- Luka Doncic ranked first with an impact
+  score of 54.8.
+- Giannis Antetokounmpo ranked second at 50.7.
+- Nikola Jokic ranked third at 50.1.
+- Jokic ranked higher than Shai
+  Gilgeous-Alexander despite averaging
+  fewer points per game.
+
+**Insight:** Combining multiple statistical
+categories provides a broader view of box-score
+production than scoring alone. The results
+highlighted players who contributed across
+several areas of the game.
+
+**Note:** This is a custom, unweighted metric
+rather than an official NBA player rating.
+
 ## Analytical Methods
 
 The analysis uses SQL techniques including:
